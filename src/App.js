@@ -16,9 +16,14 @@ function bubbleSort(data) {
       }
     }
   }
-
-  console.log(counter);
-  console.log(data);
+  return (
+    <div className="wrapper">
+      <p>Sorted Items</p>
+      {data}
+      <p>Number of swaps</p>
+      {counter}
+    </div>
+  );
 }
 
 function selectionSort(data) {
@@ -36,7 +41,7 @@ function selectionSort(data) {
     data[i] = data[min];
     data[min] = temp;
   }
-
+  return data;
   console.log(data);
 }
 
@@ -66,13 +71,14 @@ function insertionSort(data) {
 }
 
 export default function App() {
-  bubbleSort(data);
-  selectionSort(data);
-  insertionSort(data);
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Bubble Sort</h1>
+      {bubbleSort(data)}
+      <h1>Selection Sort</h1>
+      {selectionSort(data)}
+      <h1>Insertion Sort</h1>
+      {insertionSort(data)}
     </div>
   );
 }
